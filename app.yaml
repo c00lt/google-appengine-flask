@@ -1,0 +1,22 @@
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /dist
+  static_dir: dist
+- url: /.*
+  script: app.server.main.app
+  secure: always
+  login: required
+
+skip_files:
+- ^(.*/)?#.*#$
+- ^(.*/)?.*~$
+- ^(.*/)?.*\.py[co]$
+- ^(.*/)?\..*$
+- ^bower_components$
+- ^node_modules$
+- ^venv$
+- ^\.idea$
+- ^\.git$
